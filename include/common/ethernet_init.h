@@ -10,6 +10,8 @@ esp_err_t w5500_eth_init(esp_eth_handle_t *eth_handles_out[], uint8_t *eth_cnt_o
 
 esp_err_t w5500_eth_deinit(esp_eth_handle_t *eth_handles, uint8_t eth_cnt);
 
+void ethernet_init(void);
+
 #ifdef __cplusplus
 }
 #endif
