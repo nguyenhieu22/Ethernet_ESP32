@@ -805,6 +805,13 @@ E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/wifi_provisioning/CMakeFiles/l
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/__idf_espressif__led_strip.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/edit_cache.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/rebuild_cache.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/list_install_components.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/install.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/install/local.dir
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/CMakeFiles/install/strip.dir
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/main/CMakeFiles/__idf_main.dir
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/main/CMakeFiles/edit_cache.dir
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

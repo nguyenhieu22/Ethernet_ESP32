@@ -80,4 +80,5 @@ E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/mqtt/libmqtt.a
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/spiffs/libspiffs.a
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/espressif__led_strip/libespressif__led_strip.a
 E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/main/libmain.a

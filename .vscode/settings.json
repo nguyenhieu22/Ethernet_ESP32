@@ -9,5 +9,8 @@
     "IDF_TARGET": "esp32c6"
   },
   "idf.portWin": "COM33",
-  "idf.flashType": "UART"
+  "idf.flashType": "UART",
+  "files.associations": {
+    "ethernet_init.h": "c"
+  }
 }
