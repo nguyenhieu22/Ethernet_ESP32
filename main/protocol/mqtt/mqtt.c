@@ -43,7 +43,17 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             ESP_LOGI(TAG, "MQTT_EVENT_DATA");
             printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
             printf("DATA=%.*s\r\n", event->data_len, event->data);
-            consumer(event->data, event->data_len);
+            
+            
+            xsolar_buf_t topic = {
+                .data = event->topic,
+                .len = event->topic_len
+            };
+            xsolar_buf_t data = {
+                .data = event->data,
+                .len = event->data_len
+            };
+            consumer(&topic, &data);
             
             break;
         case MQTT_EVENT_ERROR:

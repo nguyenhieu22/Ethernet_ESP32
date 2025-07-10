@@ -402,7 +402,7 @@ SECTIONS
     *(.gnu.linkonce.s.*)
     *(.gnu.linkonce.s2.*)
     *(.jcr)
-    *(.data .data.*)
+    *(EXCLUDE_FILE(*libble_app.a *libbt.a) .data EXCLUDE_FILE(*libble_app.a *libbt.a) .data.*)
     *(.dram1 .dram1.*)
     _coredump_dram_start = ABSOLUTE(.);
     *(.dram2.coredump .dram2.coredump.*)
@@ -410,6 +410,16 @@ SECTIONS
     *libapp_trace.a:app_trace.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
     *libapp_trace.a:app_trace_util.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
     *libapp_trace.a:port_uart.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
+    . = ALIGN(4);
+    _bt_controller_data_start = ABSOLUTE(.);
+    *libble_app.a:(.data .data.*)
+    . = ALIGN(4);
+    _bt_controller_data_end = ABSOLUTE(.);
+    . = ALIGN(4);
+    _bt_data_start = ABSOLUTE(.);
+    *libbt.a:(.data .data.*)
+    . = ALIGN(4);
+    _bt_data_end = ABSOLUTE(.);
     *libclang_rt.builtins.a:_divsf3.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
     *libclang_rt.builtins.a:restore.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
     *libclang_rt.builtins.a:save.*(.rodata .rodata.* .sdata2 .sdata2.* .srodata .srodata.*)
@@ -492,10 +502,30 @@ SECTIONS
      * (See components/esp_system/app.lf).
 
      */
-    *(.bss .bss.*)
+    *(EXCLUDE_FILE(*libble_app.a *libbt.a) .bss EXCLUDE_FILE(*libble_app.a *libbt.a) .bss.*)
     *(.dynbss .dynsbss .gnu.linkonce.b .gnu.linkonce.b.* .gnu.linkonce.sb .gnu.linkonce.sb.* .gnu.linkonce.sb2 .gnu.linkonce.sb2.* .sbss .sbss.* .sbss2 .sbss2.* .scommon .share.mem)
     *(.ext_ram.bss .ext_ram.bss.*)
-    *(COMMON)
+    *(EXCLUDE_FILE(*libble_app.a *libbt.a) COMMON)
+    . = ALIGN(4);
+    _bt_controller_bss_start = ABSOLUTE(.);
+    *libble_app.a:(.bss .bss.*)
+    . = ALIGN(4);
+    _bt_controller_bss_end = ABSOLUTE(.);
+    . = ALIGN(4);
+    _bt_controller_common_start = ABSOLUTE(.);
+    *libble_app.a:(COMMON)
+    . = ALIGN(4);
+    _bt_controller_common_end = ABSOLUTE(.);
+    . = ALIGN(4);
+    _bt_bss_start = ABSOLUTE(.);
+    *libbt.a:(.bss .bss.*)
+    . = ALIGN(4);
+    _bt_bss_end = ABSOLUTE(.);
+    . = ALIGN(4);
+    _bt_common_start = ABSOLUTE(.);
+    *libbt.a:(COMMON)
+    . = ALIGN(4);
+    _bt_common_end = ABSOLUTE(.);
     
  . = ALIGN(8); 
  _bss_end = ABSOLUTE(.);

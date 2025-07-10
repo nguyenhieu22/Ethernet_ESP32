@@ -5,6 +5,7 @@ idf_component_register(SRCS "ethernet_main.c"
                             "protocol/mqtt/subcriber.c"
                             "protocol/mqtt/publisher.c"
                             "app/led/led.c"
+                           "ble/ble_mesh.c"
                        INCLUDE_DIRS "."
                        INCLUDE_DIRS "../include"
                        )

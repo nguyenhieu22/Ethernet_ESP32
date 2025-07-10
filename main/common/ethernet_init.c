@@ -94,7 +94,7 @@ static void got_ip_event_handler(void *arg, esp_event_base_t event_base,
     ESP_LOGI(TAG, "ETHMASK:" IPSTR, IP2STR(&ip_info->netmask));
     ESP_LOGI(TAG, "ETHGW:" IPSTR, IP2STR(&ip_info->gw));
     ESP_LOGI(TAG, ">>>>>>>> <<<<<<<<");
-    xEventGroupSetBits(s_eth_event_group, ETH_CONNECTED_BIT);
+    xEventGroupSetBits(s_eth_event_group, BLE_MESH_INIT_BIT);
 }
 
 static esp_err_t spi_bus_init(void)
