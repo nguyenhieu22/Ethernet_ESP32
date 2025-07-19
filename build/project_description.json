@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "ethernet_basic",
-    "project_version":    "a15e4d7-dirty",
+    "project_version":    "10a640e-dirty",
     "project_path":       "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic",
     "idf_path":           "C:/Users/User/esp/v5.3.1/esp-idf",
     "build_dir":          "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build",
@@ -1195,7 +1195,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/build/esp-idf/main/libmain.a",
-            "sources": [ "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/ethernet_main.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/common/ethernet_init.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/util/e_time.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/mqtt.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/subcriber.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/publisher.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/app/led/led.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/ble/ble_mesh.c" ],
+            "sources": [ "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/ethernet_main.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/common/ethernet_init.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/util/e_time.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/mqtt.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/subcriber.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/protocol/mqtt/publisher.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/app/led/led.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/ble/ble_mesh.c", "E:/ESP_IDF/SDK3/ETHERNET_TEST/basic/main/gpio/button.c" ],
             "include_dirs": [ ".", "../include" ]
         },
         "mbedtls": {

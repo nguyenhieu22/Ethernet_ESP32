@@ -33,8 +33,8 @@ static const char *TAG = "ETHERNET_INIT";
 #define SPI_ETHERNETS_NUM                1
 #define INTERNAL_ETHERNETS_NUM           0
 
-#define INIT_SPI_ETH_MODULE_CONFIG(eth_module_config, num)                                      \
-    do {                                                                                        \
+#define INIT_SPI_ETH_MODULE_CONFIG(eth_module_config, num)                              \
+    do {                                                                                \
         eth_module_config[num].spi_cs_gpio = CONFIG_ETH_SPI_CS ##num## _GPIO;           \
         eth_module_config[num].int_gpio = CONFIG_ETH_SPI_INT ##num## _GPIO;             \
         eth_module_config[num].polling_ms = CONFIG_ETH_SPI_POLLING ##num## _MS;         \

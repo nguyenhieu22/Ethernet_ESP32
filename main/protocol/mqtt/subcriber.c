@@ -10,7 +10,6 @@
 
 const char *TAG = "Subscriber";
 
-
 extern esp_mqtt_client_handle_t _client;
 
 static topic_pair_t pairs[MAX_TOPIC];
@@ -24,6 +23,7 @@ void consumer(xsolar_buf_t *topic, xsolar_buf_t *data) {
     }
 }
 
+// Register a topic and its associated callback function
 void subscribe_register(xsolar_buf_t *topic, mqtt_callback_t callback) {
     for (int i = 0; i < MAX_TOPIC; i++) {
         if (pairs[i].topic == NULL) {
@@ -34,6 +34,7 @@ void subscribe_register(xsolar_buf_t *topic, mqtt_callback_t callback) {
     }
 }
 
+// Tao subscribe -> mqtt callback
 void subscribe(void) {
     for (int i = 0; i < MAX_TOPIC; i++) {
         if (pairs[i].topic != NULL) {

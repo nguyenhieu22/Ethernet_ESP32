@@ -18,6 +18,7 @@
 #include "app/led/led.h"
 #include "ble/ble_mesh.h"
 #include "cJSON.h"
+#include "gpio/button.h"
 
 EventGroupHandle_t s_eth_event_group, s_ble_mesh_event_group;
 
@@ -155,18 +156,46 @@ void xsolar_callback(xsolar_buf_t *data) {
     uint16_t addr = (uint16_t)addr_json->valueint;
     uint16_t opcode = (uint16_t)opcode_json->valueint;
     uint8_t data_to_send[3] = {red->valueint, green->valueint, blue->valueint};
+    led_strip_set(data_to_send[0], data_to_send[1], data_to_send[2]);
     xsolar_ble_mesh_send_data(&x_model_root[2], addr, opcode, data_to_send, sizeof(data_to_send));
+
     cJSON_Delete(root);
-    //ESP_LOGI(TAG, "DATA=%.*s\r\n", data->len, data->data);
-    //cJSON_Delete(root);
-    //printf("callback 1\n");
 }
 
 void xsolar_callback_(xsolar_buf_t *data) {
-    printf("callback 2\n");
+    printf("callback status\n");
 
 }
 
+//Button.
+button_func_pair_t button_func_pair[] = {
+        {GPIO_NUM_9, BUTTON_ONOFF_TOGGLE_CONTROL}
+};
+
+void button_callback(button_func_pair_t *param) {
+    printf("Button pressed %d\n", param->func);
+    int len = 6;
+    uint8_t data[len];
+    switch (param->func) {
+        case BUTTON_ONOFF_TOGGLE_CONTROL:
+            ESP_LOGI(TAG, "Button pressed");
+           
+            for (int i = 0; i < len; i++) {
+                data[i] = i;
+            }
+
+            esp_err_t err = xsolar_ble_mesh_send_data(&x_model_root[2], 0x006f, X_LED_MODEL, data, len);
+
+            if (err != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to send data");
+            } else {
+                ESP_LOGI(TAG, "Sent data to device");
+            }
+            break;
+        default:
+            break;
+    }
+}
 
 void app_main(void)
 {   
@@ -207,19 +236,17 @@ void app_main(void)
         printf("Ethernet connection failed\n");
     }
 
-
-    //subscribe_register(&topic_s, xsolar_callback);
-    //callback = xsolar_callback; // Register the callback function
-    char *topic= "tele/test"; //poiter chi den chui hang
+    char *topic= "stat/led_rgb/CONTROL"; //poiter chi den chui hang
+    char *topic_= "stat/led_rgb/STATUS";
     xsolar_buf_t topic_buf = {
         .data = topic,
         .len = strlen(topic)
     };
-    char *topic_= "tele/test2";
     xsolar_buf_t topic_buf_ = {
         .data = topic_,
         .len = strlen(topic_)
     };
+
     subscribe_register(&topic_buf, xsolar_callback); 
     subscribe_register(&topic_buf_, xsolar_callback_); 
     mqtt_app_start();
@@ -229,7 +256,7 @@ void app_main(void)
     
     led_init();
     led_strip_set(0, 0, 0); // Set LED to green color
-    
+    button_driver_init(button_func_pair, PAIR_SIZE(button_func_pair), button_callback);
     /*while (1) {
         vTaskDelay(pdMS_TO_TICKS(10000)); // Delay 1s
         printf("Sending LED control command...\n");

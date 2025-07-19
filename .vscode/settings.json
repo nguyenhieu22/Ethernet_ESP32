@@ -8,13 +8,14 @@
     "ESP_ROM_ELF_DIR": "e:\\ESP_IDF\\SDK3\\Espressif\\tools\\esp-rom-elfs\\20240305/",
     "IDF_TARGET": "esp32c6"
   },
-  "idf.portWin": "COM33",
+  "idf.portWin": "COM32",
   "idf.flashType": "UART",
   "files.associations": {
     "ethernet_init.h": "c",
     "sdkconfig.h": "c",
     "mqtt.h": "c",
     "define.h": "c",
-    "e_time.h": "c"
+    "e_time.h": "c",
+    "led_strip.h": "c"
   }
 }
